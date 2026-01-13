@@ -1,204 +1,418 @@
-/* Reset and base styles */
-* {
+/* ========================================
+   Aaron Stagoff-Belfort - Academic Website
+   Clean, Modern, Professional Design
+   ======================================== */
+
+:root {
+    --color-primary: #1e3a5f;
+    --color-primary-dark: #152a45;
+    --color-accent: #2c5282;
+    --color-text: #2d3748;
+    --color-text-light: #4a5568;
+    --color-text-muted: #718096;
+    --color-bg: #ffffff;
+    --color-bg-subtle: #f7fafc;
+    --color-border: #e2e8f0;
+    --color-link: #2b6cb0;
+    --color-link-hover: #1a4971;
+    --font-sans: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-serif: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+    --transition: all 0.2s ease;
+}
+
+/* Reset */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Lato', sans-serif;
+html {
     font-size: 16px;
-    line-height: 1.7;
-    color: #333;
-    background-color: #fff;
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Links */
 a {
-    color: #1a5276;
+    color: var(--color-link);
     text-decoration: none;
+    transition: var(--transition);
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--color-link-hover);
 }
 
-/* Header and Navigation */
+/* ========================================
+   Header
+   ======================================== */
+
 header {
-    background-color: #1a5276;
-    padding: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.95);
 }
 
-nav {
-    max-width: 1000px;
+.header-inner {
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    height: 70px;
 }
 
-.site-title {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 15px 0;
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
 }
 
-.site-title:hover {
-    text-decoration: none;
-    opacity: 0.9;
+.logo:hover {
+    color: var(--color-primary-dark);
 }
 
-.nav-links {
+nav {
     display: flex;
-    gap: 10px;
+    gap: 0.5rem;
 }
 
-.nav-links a {
-    color: #fff;
-    padding: 15px 20px;
-    font-weight: 400;
-    transition: background-color 0.2s;
+nav a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: var(--transition);
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    background-color: rgba(255,255,255,0.1);
-    text-decoration: none;
+nav a:hover {
+    color: var(--color-primary);
+    background: var(--color-bg-subtle);
 }
 
-/* Main content */
+nav a.active {
+    color: var(--color-primary);
+    background: var(--color-bg-subtle);
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+
 main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-/* Hero / About section */
-.hero {
-    padding: 20px 0;
-}
-
-.hero-content {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.profile-image {
-    flex-shrink: 0;
-}
-
-.profile-image img {
-    width: 250px;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.bio {
     flex: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
-.bio h1 {
-    font-size: 1.8rem;
-    color: #1a5276;
-    margin-bottom: 20px;
-    font-weight: 700;
+/* ========================================
+   Hero / About Section
+   ======================================== */
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3.5rem;
+    align-items: start;
 }
 
-.bio p {
-    margin-bottom: 15px;
-    text-align: justify;
+.profile-container {
+    position: sticky;
+    top: 110px;
 }
 
-.bio strong {
-    color: #1a5276;
+.profile-image-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
-/* CV Section */
-.cv-section {
-    padding: 20px 0;
+.profile-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+    pointer-events: none;
 }
 
-.cv-section h1 {
-    font-size: 1.8rem;
-    color: #1a5276;
-    margin-bottom: 20px;
-    font-weight: 700;
+.profile-image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-.cv-download {
-    margin-bottom: 30px;
+.bio-container {
+    padding-top: 0.25rem;
+}
+
+.bio-text {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.bio-text:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.bio-text a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-decoration-color: rgba(43, 108, 176, 0.3);
+    text-underline-offset: 2px;
+    transition: var(--transition);
+}
+
+.bio-text a:hover {
+    text-decoration-color: var(--color-link);
+}
+
+.bio-text strong {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.bio-text em {
+    font-style: italic;
+}
+
+.contact {
+    padding-top: 0.5rem;
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    padding: 0.75rem 1.25rem;
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.email-link:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   CV Page
+   ======================================== */
+
+.cv-page {
+    max-width: 100%;
+}
+
+.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.cv-header h1 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
 }
 
 .download-btn {
-    display: inline-block;
-    background-color: #1a5276;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-weight: 400;
-    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    background: var(--color-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
 }
 
 .download-btn:hover {
-    background-color: #154360;
-    text-decoration: none;
+    background: var(--color-primary-dark);
+    color: white;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
-.cv-embed {
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.download-btn svg {
+    flex-shrink: 0;
+}
+
+.cv-embed-container {
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
-.cv-embed iframe {
-    border: none;
+.cv-embed-container iframe {
     display: block;
+    width: 100%;
+    height: 85vh;
+    min-height: 600px;
+    border: none;
 }
 
-/* Footer */
+/* ========================================
+   Footer
+   ======================================== */
+
 footer {
-    background-color: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-    color: #666;
-    font-size: 0.9rem;
-    margin-top: 60px;
-    border-top: 1px solid #eee;
+    background: var(--color-bg-subtle);
+    border-top: 1px solid var(--color-border);
+    padding: 2.5rem 2rem;
+    margin-top: auto;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .hero-content {
+.footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-inner p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.footer-inner p:first-child {
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 0.25rem;
+}
+
+.footer-affiliation {
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 800px) {
+    .header-inner {
+        padding: 0 1.5rem;
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .profile-container {
+        position: static;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .bio-text {
+        font-size: 1.05rem;
+    }
+
+    .cv-header {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        gap: 1rem;
     }
 
-    .profile-image img {
-        width: 200px;
+    .cv-header h1 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 500px) {
+    nav a {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.9rem;
     }
 
-    .bio p {
-        text-align: left;
+    main {
+        padding: 2rem 1rem;
     }
 
-    nav {
-        flex-direction: column;
-        padding: 10px 20px;
+    .bio-text {
+        font-size: 1rem;
+        line-height: 1.75;
     }
 
-    .site-title {
-        padding: 10px 0;
+    .cv-embed-container iframe {
+        height: 70vh;
+        min-height: 500px;
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+    header, footer, .download-btn {
+        display: none;
     }
 
-    .nav-links {
-        padding-bottom: 10px;
+    main {
+        padding: 0;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-container {
+        display: none;
     }
 }

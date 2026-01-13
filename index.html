@@ -7,53 +7,47 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html" class="site-title">Aaron Stagoff-Belfort</a>
-            <div class="nav-links">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Aaron Stagoff-Belfort</a>
+            <nav>
                 <a href="index.html" class="active">Home</a>
                 <a href="cv.html">CV</a>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <div class="profile-image">
-                    <img src="headshot.jpg" alt="Aaron Stagoff-Belfort">
+            <div class="hero-inner">
+                <div class="profile-container">
+                    <div class="profile-image-wrapper">
+                        <img src="headshot.jpg" alt="Aaron Stagoff-Belfort">
+                    </div>
                 </div>
-                <div class="bio">
-                    <h1>About</h1>
-                    <p>
-                        I am a Ph.D. candidate in the <a href="https://sociology.uchicago.edu/" target="_blank">Department of Sociology</a>
-                        at the University of Chicago. I hold an M.A. in Sociology from the University of Chicago and a B.A. from
-                        <a href="https://www.wesleyan.edu/" target="_blank">Wesleyan University</a>.
+                <div class="bio-container">
+                    <p class="bio-text">
+                        I am a third-year PhD student in the <a href="https://sociology.uchicago.edu/">Department of Sociology</a> at the University of Chicago and a <strong>National Science Foundation Graduate Research Fellow</strong>. At UChicago, I am also a researcher affiliated with the <a href="https://ucjp.uchicago.edu/">UChicago Justice Project</a> and an Urban Doctoral Fellow at the <a href="https://miurban.uchicago.edu/">Mansueto Institute for Urban Innovation</a>. I serve as an Assistant Editor for the <em>American Journal of Sociology</em>.
                     </p>
-                    <p>
-                        My research focuses on <strong>policing</strong>, <strong>urban sociology</strong>, and <strong>racial inequality</strong>.
-                        I use quantitative and quasi-experimental methods to study how policing practices shape neighborhoods and
-                        communities—from the effects of automated traffic enforcement to the diffusion of policing alternatives
-                        after the George Floyd protests.
+                    <p class="bio-text">
+                        I am also a Graduate Student Research Scholar for the <a href="https://www.policingproject.org/">Policing Project</a> at NYU School of Law. Previously, I was a Program Associate in the Redefining Public Safety program at the <a href="https://www.vera.org/">Vera Institute of Justice</a> in New York City for four years.
                     </p>
-                    <p>
-                        My work has been published in the <em>Proceedings of the National Academy of Sciences</em>, and I currently
-                        have papers under review at the <em>American Sociological Review</em>. My research is supported by the
-                        <strong>National Science Foundation Graduate Research Fellowship</strong>.
-                    </p>
-                    <p>
-                        You can reach me at <a href="mailto:astagoff@uchicago.edu">astagoff@uchicago.edu</a>.
-                    </p>
+                    <div class="contact">
+                        <a href="mailto:astagoff@uchicago.edu" class="email-link">astagoff@uchicago.edu</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Aaron Stagoff-Belfort</p>
+        <div class="footer-inner">
+            <p>Aaron Stagoff-Belfort</p>
+            <p class="footer-affiliation">Department of Sociology, University of Chicago</p>
+        </div>
     </footer>
 </body>
 </html>
