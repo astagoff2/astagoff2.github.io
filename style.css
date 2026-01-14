@@ -215,9 +215,11 @@ main {
 
 .contact {
     margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
 }
 
-.email-link {
+.contact-link {
     display: inline-block;
     font-family: var(--font-sans);
     font-size: 0.8rem;
@@ -230,7 +232,7 @@ main {
     transition: all 0.3s var(--ease-out);
 }
 
-.email-link:hover {
+.contact-link:hover {
     color: var(--color-ink);
     letter-spacing: 0.1em;
 }
