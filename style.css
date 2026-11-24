@@ -324,6 +324,66 @@ main {
 }
 
 /* ========================================
+   Research Page
+   ======================================== */
+
+.research-list {
+    list-style: none;
+    margin-bottom: 3.5rem;
+}
+
+.research-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.research-item:first-child {
+    padding-top: 0;
+}
+
+.research-page .section-title {
+    font-weight: 500;
+}
+
+.research-meta {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-ink-muted);
+}
+
+.research-abstract summary {
+    width: fit-content;
+    font-size: 0.8rem;
+    color: var(--color-ink-muted);
+    cursor: pointer;
+}
+
+.research-abstract summary:hover {
+    color: var(--color-ink);
+}
+
+.research-abstract p {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-ink-light);
+    margin-top: 0.6rem;
+}
+
+.research-item a.writing-title {
+    text-decoration: underline;
+    text-decoration-color: var(--color-border);
+    text-underline-offset: 0.2em;
+}
+
+.research-item span.writing-title:hover {
+    color: var(--color-ink);
+}
+
+/* ========================================
    CV Page
    ======================================== */
 
@@ -452,6 +512,11 @@ footer {
 }
 
 @media (max-width: 500px) {
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+    }
+
     nav {
         gap: 1.5rem;
     }
