@@ -354,6 +354,17 @@ main {
     color: var(--color-ink-muted);
 }
 
+.research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+.research-links a:hover {
+    text-decoration: underline;
+}
+
 .research-abstract summary {
     width: fit-content;
     font-size: 0.8rem;
